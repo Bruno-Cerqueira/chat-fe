@@ -5,11 +5,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ChatWrapperComponent } from './chat-wrapper/chat-wrapper.component';
+import { ChatListComponent } from './chat-list/chat-list.component';
+import { ChatCardComponent } from './chat-list/chat-card/chat-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChatWrapperComponent
+    ChatWrapperComponent,
+    ChatListComponent,
+    ChatCardComponent
   ],
   imports: [
     BrowserModule,
