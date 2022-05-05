@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { ChatWrapperComponent } from './chat-wrapper/chat-wrapper.component';
 import { ChatListComponent } from './chat-list/chat-list.component';
 import { ChatCardComponent } from './chat-list/chat-card/chat-card.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ChatCardComponent } from './chat-list/chat-card/chat-card.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
