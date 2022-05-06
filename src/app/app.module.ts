@@ -11,13 +11,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
+import { SelectUsersComponent } from './select-users/select-users.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChatWrapperComponent,
     ChatListComponent,
-    ChatCardComponent
+    ChatCardComponent,
+    SelectUsersComponent
   ],
   imports: [
     BrowserModule,

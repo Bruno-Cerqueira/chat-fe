@@ -15,4 +15,4 @@ interface Message {
   authorId: number;
 }
 
-export { Room }
+export { Room, User }

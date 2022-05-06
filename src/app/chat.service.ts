@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Room } from './int';
+import { Room, User } from './int';
 
 @Injectable({
   providedIn: 'root'
@@ -10,10 +10,8 @@ export class ChatService {
 
   constructor(private http: HttpClient) { }
 
-  getUsers(){
-    this.http.get('/api/users').subscribe(data => {
-      console.log(data)
-    })
+  getUsers(): Observable<User[]>{
+    return this.http.get('/api/users') as Observable<User[]>;
   }
 
   getRooms(): Observable<Room[]>{
