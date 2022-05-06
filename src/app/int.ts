@@ -5,6 +5,7 @@ interface Room {
 }
 
 interface User {
+  id: number;
   name: string;
 }
 

@@ -1,7 +1,11 @@
 <h2>Chats</h2>
-<mat-selection-list  [multiple]="false">
-  
-  <mat-list-option *ngFor="let room of rooms$ | async" (click)="selectRoom(room)">
-    <app-chat-card [room]="room"></app-chat-card>
-  </mat-list-option>
-</mat-selection-list>
+<ng-container *ngIf="!user">
+  Selecionar user
+</ng-container>
+<ng-container *ngIf="!!user">
+  <mat-selection-list  [multiple]="false">
+    <mat-list-option *ngFor="let room of rooms$ | async" (click)="selectRoom(room)">
+      <app-chat-card [room]="room"></app-chat-card>
+    </mat-list-option>
+  </mat-selection-list>
+</ng-container>

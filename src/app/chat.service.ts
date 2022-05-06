@@ -9,17 +9,17 @@ import { Room, User } from './int';
 export class ChatService {
 
   constructor(private http: HttpClient) { }
-
+  
   getUsers(): Observable<User[]>{
     return this.http.get('/api/users') as Observable<User[]>;
   }
 
-  getRooms(): Observable<Room[]>{
-    return this.http.get('/api/rooms') as Observable<Room[]>;
+  getRooms(user: User|null): Observable<Room[]>{
+    return this.http.get(`/api/rooms/${user?.id}`) as Observable<Room[]>;
   }
 
   getRoom(id: number): Observable<Room>{
-    const api = `api/room/${id}`
+    const api = `api/room/${id}`;
     return this.http.get(api) as Observable<Room>;
   }
 
