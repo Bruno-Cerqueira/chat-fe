@@ -1,0 +1,16 @@
+:host {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  button {
+    max-width: 100px;
+  }
+
+  .panel {
+    display: flex;
+  }
+  .list {
+    max-width: 30%;
+  }
+}

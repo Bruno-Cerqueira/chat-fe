@@ -1,1 +1,6 @@
-<app-chat-card></app-chat-card>
+<h2>Chats</h2>
+<mat-selection-list  [multiple]="false">
+  <mat-list-option *ngFor="let room of rooms" [value]="room">
+    <app-chat-card></app-chat-card>
+  </mat-list-option>
+</mat-selection-list>

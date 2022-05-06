@@ -8,6 +8,8 @@ import { ChatWrapperComponent } from './chat-wrapper/chat-wrapper.component';
 import { ChatListComponent } from './chat-list/chat-list.component';
 import { ChatCardComponent } from './chat-list/chat-card/chat-card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatListModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
