@@ -1,5 +1,6 @@
 <mat-selection-list  [multiple]="false">
-  <mat-list-option *ngFor="let user of users$ | async" (click)="selectuser()">
+  <mat-list-option *ngFor="let user of users$ | async" (click)="selectuser(user)">
+    
     {{ user?.name }}
   </mat-list-option>
 </mat-selection-list>
