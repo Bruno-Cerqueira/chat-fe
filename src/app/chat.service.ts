@@ -23,8 +23,8 @@ export class ChatService {
     return this.http.get(api) as Observable<Room>;
   }
 
-  createRoom(name: string|null){
-    this.http.post('/api/room', { name }).subscribe(data => {
+  createRoom(name: string|null, userId: undefined|number|null){
+    this.http.post('/api/room', { name, userId }).subscribe(data => {
       console.log(data);
     })
   }

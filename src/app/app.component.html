@@ -1,6 +1,8 @@
 <app-select-users></app-select-users>
-<input type="text" [(ngModel)]="roomName" name="roomName">
-<button (click)="createRoom()">Create chat</button>
+<ng-container *ngIf="!!user">
+  <input type="text" [(ngModel)]="roomName" name="roomName">
+  <button (click)="createRoom()">Create chat</button>
+</ng-container>
 <div class="panel">
   <app-chat-list class="list" (selectedRoom)="showRoom($event)"></app-chat-list>
   <app-chat-wrapper class="chat" [room]="room$ | async"></app-chat-wrapper>
