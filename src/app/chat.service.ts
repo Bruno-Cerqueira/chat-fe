@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Room, User } from './int';
+import { Message, Room, User } from './int';
 
 @Injectable({
   providedIn: 'root'
@@ -27,5 +27,15 @@ export class ChatService {
     this.http.post('/api/room', { name, userId }).subscribe(data => {
       console.log(data);
     })
+  }
+
+  createMessage(message: string|null, authorId: undefined|number|null, roomId: undefined|number|null){
+    this.http.post('/api/message', { message, authorId, roomId }).subscribe(data => {
+      console.log(data);
+    })
+  }
+
+  getMessages(roomId: number|null): Observable<Message[]>{
+    return this.http.get(`/api/messages/${roomId}`) as Observable<Message[]>;
   }
 }

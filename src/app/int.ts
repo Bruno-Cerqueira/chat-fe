@@ -1,4 +1,5 @@
 interface Room {
+  id: number;
   name: string;
   users: User[];
   meetings: Message[];
@@ -11,9 +12,10 @@ interface User {
 
 
 interface Message {
+  id: number;
   message: string;
   roomId: number;
   authorId: number;
 }
 
-export { Room, User }
+export { Room, User, Message }
