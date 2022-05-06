@@ -2,5 +2,5 @@
 <button (click)="createRoom()">Create chat</button>
 <div class="panel">
   <app-chat-list class="list" (selectedRoom)="showRoom($event)"></app-chat-list>
-  <app-chat-wrapper class="chat"></app-chat-wrapper>
+  <app-chat-wrapper class="chat" [room]="room$ | async"></app-chat-wrapper>
 </div>

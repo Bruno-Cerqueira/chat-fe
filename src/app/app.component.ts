@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ChatService } from './chat.service';
+import { Room } from './int';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +12,7 @@ export class AppComponent {
   constructor(private chatService: ChatService){}
   title = 'chat-fe';
   roomName: string|null = null;
+  room$: Observable<Room>|undefined;
 
   createRoom(){
     this.chatService.createRoom(this.roomName)
@@ -20,6 +23,6 @@ export class AppComponent {
   }
 
   showRoom(room: any){
-    this.chatService.getRoom(room.id)
+    this.room$ = this.chatService.getRoom(room.id)
   }
 }
