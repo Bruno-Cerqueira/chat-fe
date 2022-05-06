@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ChatService } from '../chat.service';
 import { Room } from '../int';
 
 @Component({
@@ -7,11 +9,16 @@ import { Room } from '../int';
   styleUrls: ['./chat-list.component.scss']
 })
 export class ChatListComponent implements OnInit {
-  rooms: any[] = [{ name: 'as'}, { name: 'a'}];
-  constructor() { }
+  @Output() selectedRoom = new EventEmitter<Room>()
+  constructor(private chatService: ChatService) { }
+  rooms$: Observable<Room[]> | undefined;
 
   roomSelected: Room|null = null;
   ngOnInit(): void {
+    this.rooms$ = this.chatService.getRooms();
   }
 
+  selectRoom(room: Room) {
+    this.selectedRoom.emit(room)
+  }
 }

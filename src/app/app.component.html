@@ -1,5 +1,6 @@
-<button>Create chat</button>
+<input type="text" [(ngModel)]="roomName" name="roomName">
+<button (click)="createRoom()">Create chat</button>
 <div class="panel">
-  <app-chat-list class="list"></app-chat-list>
+  <app-chat-list class="list" (selectedRoom)="showRoom($event)"></app-chat-list>
   <app-chat-wrapper class="chat"></app-chat-wrapper>
 </div>

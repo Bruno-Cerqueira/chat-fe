@@ -10,6 +10,7 @@ import { ChatCardComponent } from './chat-list/chat-card/chat-card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { MatCardModule } from '@angular/material/card';
     HttpClientModule,
     BrowserAnimationsModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
