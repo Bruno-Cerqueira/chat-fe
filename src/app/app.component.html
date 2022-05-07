@@ -5,5 +5,5 @@
 </ng-container>
 <div class="panel">
   <app-chat-list class="list" (selectedRoom)="showRoom($event)"></app-chat-list>
-  <app-chat-wrapper class="chat" [room]="room$ | async"></app-chat-wrapper>
+  <app-chat-wrapper *ngIf="room$ | async as room" class="chat" [room]="room$ | async"></app-chat-wrapper>
 </div>

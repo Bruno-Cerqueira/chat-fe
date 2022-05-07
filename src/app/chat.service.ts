@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { Message, Room, User } from './int';
 
 @Injectable({
@@ -35,7 +35,7 @@ export class ChatService {
     })
   }
 
-  getMessages(roomId: number|null): Observable<Message[]>{
-    return this.http.get(`/api/messages/${roomId}`) as Observable<Message[]>;
+  getMessages(roomId: number|undefined): Observable<Message[]>{
+    return (this.http.get(`/api/messages/${roomId}`) as Observable<Message[]>).pipe(tap((data: Message[]) => console.log(data)));
   }
 }
