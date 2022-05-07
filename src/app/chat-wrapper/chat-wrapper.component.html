@@ -1,8 +1,6 @@
 <h2>{{ room?.name }}</h2>
-<div>
-  <div class="messages">
-    <div class="baloon" *ngFor="let message of messages$ | async">{{message.message}}</div>
-  </div>
-  <input type="text" [(ngModel)]="message" name="message">
-  <button [disabled]="!message" (click)="sendMessage()">Send Message</button>
+<div class="messages">
+  <app-message *ngFor="let message of messages$ | async" [message]="message"></app-message>
 </div>
+<input type="text" [(ngModel)]="message" name="message">
+<button [disabled]="!message" (click)="sendMessage()">Send Message</button>

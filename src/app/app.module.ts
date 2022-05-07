@@ -13,6 +13,7 @@ import { MatCardModule } from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
 import { SelectUsersComponent } from './select-users/select-users.component';
 import { CommonModule } from '@angular/common';
+import { MessageComponent } from './message/message.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CommonModule } from '@angular/common';
     ChatWrapperComponent,
     ChatListComponent,
     ChatCardComponent,
-    SelectUsersComponent
+    SelectUsersComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,

@@ -16,6 +16,7 @@ interface Message {
   message: string;
   roomId: number;
   authorId: number;
+  createdAt: Date;
 }
 
 export { Room, User, Message }

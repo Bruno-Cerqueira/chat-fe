@@ -1,0 +1,30 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 0.8rem;
+  border-radius: 10px;
+  border: 1px gray solid;
+
+  > .message {
+    display: flex;
+    justify-content: space-between;
+
+    > p {
+      font-size: 13px;
+    }
+  }
+
+  > .info {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &.send {
+    background: #cef5e1;
+  }
+
+  &.receive {
+    background: #cee9f5;
+  }
+}
